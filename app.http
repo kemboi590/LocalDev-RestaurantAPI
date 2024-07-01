@@ -1,0 +1,483 @@
+### TEST ROUTE
+GET http://localhost:8080/api/v1
+
+### TEST ROUTE
+GET http://localhost:8080/api/v1/time
+
+        #-------------------------------------STATES---------------------------------------------------#
+
+### GET STATES
+GET http://localhost:8080/api/v1/states
+
+### GET STATE BY ID
+GET http://localhost:8080/api/v1/states/24
+
+### CREATE STATE
+POST http://localhost:8080/api/v1/states HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "UG",
+    "code": "200"
+}
+
+### UPDATE STATE BY ID
+PUT http://localhost:8080/api/v1/states/24  HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Rwanda",
+    "code": "126"
+}
+
+### DELETE STATE BY ID
+DELETE http://localhost:8080/api/v1/states/11
+
+
+    #-------------------------------------CITY---------------------------------------------------#
+### GET CITY 
+GET http://localhost:8080/api/v1/cities
+
+### GET CITY BY ID
+GET http://localhost:8080/api/v1/cities/8
+
+### CREATE CITY
+
+POST http://localhost:8080/api/v1/cities HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Sotik",
+    "state_id": 1 
+}
+
+### UPDATE CITY BY ID
+PUT http://localhost:8080/api/v1/cities/8 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "kapsabet",	
+    "state_id": 1 
+}
+
+### DELETE CITY BY ID
+DELETE http://localhost:8080/api/v1/cities/11
+
+
+        #-----------------------------------ADDRESSES---------------------------------------------------#
+### GET ALL ADDRESSES
+GET http://localhost:8080/api/v1/addresses
+
+### GET ADDRESS BY ID
+GET http://localhost:8080/api/v1/addresses/10
+
+### CREATE ADDRESS
+POST http://localhost:8080/api/v1/addresses HTTP/1.1
+Content-Type: application/json
+
+{
+    "street_address_1": "1234 kipchabo",
+    "street_address_2": "kombe road",
+    "city_id": 1,
+    "zip_code": "12890",
+    "delivery_instructions": "Deliver to the gate",
+    "user_id": 1
+}
+
+### UPDATE ADDRESS BY ID
+PUT http://localhost:8080/api/v1/addresses/10 HTTP/1.1
+Content-Type: application/json
+
+{
+    "street_address_1": "1234 kipchabo",
+    "street_address_2": "keru road",
+    "city_id": 1,
+    "zip_code": "2546",
+    "delivery_instructions": "Deliver to the field",
+    "user_id": 3
+}
+
+### DELETE ADDRESS BY ID
+DELETE http://localhost:8080/api/v1/addresses/10
+
+        #------------------------------------- Restaurants  ---------------------------------------------------#
+
+### GET ALL RESTAURANTS
+GET http://localhost:8080/api/v1/restaurants
+
+### GET RESTAURANT BY ID
+GET http://localhost:8080/api/v1/restaurants/1
+
+### CREATE RESTAURANT
+POST http://localhost:8080/api/v1/restaurants HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Mama joy",
+    "street_address": "1073 kutus",
+    "zip_code": "12345",
+    "city_id": 1
+}
+
+### UPDATE RESTAURANT BY ID
+PUT http://localhost:8080/api/v1/restaurants/5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Mama Mwende",
+    "street_address": "1234 Main St",
+    "zip_code": "12345",
+    "city_id": 1
+}
+
+### DELETE RESTAURANT BY ID
+DELETE http://localhost:8080/api/v1/restaurants/6
+
+        #------------------------------------- users ------------------------------------------------
+
+### GET ALL USERS
+GET http://localhost:8080/api/v1/users
+
+### GET USER BY ID
+GET http://localhost:8080/api/v1/users/5
+
+### CREATE USER
+POST http://localhost:8080/api/v1/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Joy Neema",
+    "contact_phone": "0712345678",
+    "phone_verified": true,
+    "email": "Joy@gmail.com",
+    "email_verified": true,
+    "confirmation_code": "1234",
+    "password": "password1"
+}
+
+### UPDATE USER BY ID
+PUT http://localhost:8080/api/v1/users/5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Mercy Chelimo",
+    "contact_phone": "0712345678",
+    "phone_verified": true,
+    "email": "mercy@gmail.com",
+    "email_verified": true,
+    "confirmation_code": "1234",
+    "password": "pass123"
+}	
+
+### DELETE USER BY ID
+DELETE http://localhost:8080/api/v1/users/5
+
+        #------------------------------------- categories  ------------------------------------------------
+
+### GET ALL CATEGORIES
+GET http://localhost:8080/api/v1/categories
+
+### GET CATEGORY BY ID
+GET http://localhost:8080/api/v1/categories/5
+
+### CREATE CATEGORY
+POST http://localhost:8080/api/v1/categories HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Good luck"
+}
+
+### UPDATE CATEGORY BY ID
+PUT http://localhost:8080/api/v1/categories/5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Good Luck Hotel"
+}
+
+### DELETE CATEGORY BY ID
+DELETE http://localhost:8080/api/v1/categories/5
+
+        #------------------------------------- menu  ------------------------------------------------
+
+### GET ALL MENUS
+GET http://localhost:8080/api/v1/menu
+
+### GET MENU BY ID
+GET http://localhost:8080/api/v1/menu/5
+
+### CREATE MENU
+POST http://localhost:8080/api/v1/menu HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "chipo",
+    "restaurant_id": 1,
+    "category_id": 1,
+    "description": "Fried potatoes",
+    "ingredients": "Potatoes, salt, chillies",
+    "price": 120.0,
+    "active": true
+}
+
+### UPDATE MENU BY ID
+PUT http://localhost:8080/api/v1/menu/5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "pancakes",
+    "restaurant_id": 1,
+    "category_id": 1,
+    "description": "Floor mixed with milk and eggs",
+    "ingredients": "EX Unga, milk, eggs",
+    "price": 120.0,
+    "active": true
+}
+
+### DELETE MENU BY ID
+DELETE http://localhost:8080/api/v1/menu/5
+
+        #------------------------------------- restaurantOwners  ------------------------------------------------
+
+### GET ALL RESTAURANTOWNERS
+GET http://localhost:8080/api/v1/restaurantOwners
+
+### GET RESTAURANTOWNER BY ID
+GET http://localhost:8080/api/v1/restaurantOwners/5
+
+### CREATE RESTAURANTOWNER
+POST http://localhost:8080/api/v1/restaurantOwners HTTP/1.1
+Content-Type: application/json
+
+    {
+        "restaurant_id": 4,
+        "owner_id": 2
+    }
+
+### UPDATE RESTAURANTOWNER BY ID
+PUT http://localhost:8080/api/v1/restaurantOwners/5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "restaurant_id": 3,
+    "owner_id": 1
+}
+
+### DELETE RESTAURANTOWNER BY ID
+DELETE http://localhost:8080/api/v1/restaurantOwners/5
+
+        #------------------------------------- drivers  ------------------------------------------------
+
+### GET ALL DRIVERS
+GET http://localhost:8080/api/v1/drivers
+
+### GET DRIVER BY ID
+GET http://localhost:8080/api/v1/drivers/5
+
+### CREATE DRIVER
+POST http://localhost:8080/api/v1/drivers HTTP/1.1
+Content-Type: application/json
+
+{
+    "car_make": "Benz",
+    "car_model": "Corolla",
+    "car_year": "2015",
+    "user_id": 1,
+    "online": true,
+    "delivering": false
+}
+
+### UPDATE DRIVER BY ID
+PUT http://localhost:8080/api/v1/drivers/5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "car_make": "Toyota",
+    "car_model": "Corolla",
+    "car_year": "2015",
+    "user_id": 1,
+    "online": true,
+    "delivering": true
+}
+
+### DELETE DRIVER BY ID
+DELETE http://localhost:8080/api/v1/drivers/5
+
+        #------------------------------------- orders  ------------------------------------------------
+
+### GET ALL ORDERS
+GET http://localhost:8080/api/v1/orders
+
+### GET ORDER BY ID
+GET http://localhost:8080/api/v1/orders/6
+
+
+### CREATE ORDER
+POST http://localhost:8080/api/v1/orders HTTP/1.1
+Content-Type: application/json
+
+{
+    "restaurant_id": 1,
+    "estimated_delivery_time": "2022-09-01T00:00:00.000Z",
+    "actual_delivery_time": "2022-09-01T00:00:00.000Z",
+    "delivery_address": "1234 Main St",
+    "user_id": 1,
+    "driver_id": 1,
+    "price": "100.00",
+    "discount": "100.0",
+    "final_price": "900.0",
+    "comment": "Good Kemboi"
+}
+
+### UPDATE ORDER BY ID
+PUT http://localhost:8080/api/v1/orders/6 HTTP/1.1
+Content-Type: application/json
+
+{
+    "restaurant_id": 1,
+    "estimated_delivery_time": "2021-09-01T00:00:00.000Z",
+    "actual_delivery_time": "2021-09-01T00:00:00.000Z",
+    "delivery_address": "1234 Main St",
+    "user_id": 1,
+    "driver_id": 1,
+    "price": "100.00",
+    "discount": "100.0",
+    "final_price": "900.0",
+    "comment": "Good sarah"
+}
+
+### DELETE ORDER BY ID
+DELETE http://localhost:8080/api/v1/orders/6
+
+        #------------------------------------- orderMenuItems  ------------------------------------------------
+
+### GET ALL ORDERMENUITEMS
+GET http://localhost:8080/api/v1/orderMenuItems
+
+### GET ORDERMENUITEM BY ID
+GET http://localhost:8080/api/v1/orderMenuItems/5
+
+### CREATE ORDERMENUITEM
+POST http://localhost:8080/api/v1/orderMenuItems HTTP/1.1
+Content-Type: application/json
+
+{
+    "order_id": 1,
+    "menu_item_id": 1,
+    "quantity": 1,
+    "item_price": "100.00",
+    "price": "120.0",
+    "comment": "Chakula tamu"
+}
+
+### UPDATE ORDERMENUITEM BY ID
+PUT http://localhost:8080/api/v1/orderMenuItems/5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "order_id": 1,
+    "menu_item_id": 1,
+    "quantity": 1,
+    "item_price": "100.00",
+    "price": "120.0",
+    "comment": "Good fiti"
+}
+
+### DELETE ORDERMENUITEM BY ID
+DELETE http://localhost:8080/api/v1/orderMenuItems/5
+
+        #------------------------------------- statusCatalog  ------------------------------------------------
+
+### GET ALL STATUSCATALOGS
+GET http://localhost:8080/api/v1/statusCatalog
+
+### GET STATUSCATALOG BY ID
+GET http://localhost:8080/api/v1/statusCatalog/4
+
+### CREATE STATUSCATALOG
+POST http://localhost:8080/api/v1/statusCatalog HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Order Placed",
+    "description": "Order Placed in the system"
+}
+
+### UPDATE STATUSCATALOG BY ID
+PUT http://localhost:8080/api/v1/statusCatalog/5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Order Delivered",
+    "description": "Order Delivered, enjoy your meal"
+}
+
+### DELETE STATUSCATALOG BY ID
+DELETE http://localhost:8080/api/v1/statusCatalog/5
+
+        #------------------------------------- orderStatus  ------------------------------------------------
+
+### GET ALL ORDERSTATUS
+GET http://localhost:8080/api/v1/orderStatus
+
+### GET ORDERSTATUS BY ID
+GET http://localhost:8080/api/v1/orderStatus/11
+
+### CREATE ORDERSTATUS
+POST http://localhost:8080/api/v1/orderStatus HTTP/1.1
+Content-Type: application/json
+
+{
+    "order_id": 1,
+    "status_catalog_id": 1
+}
+
+### UPDATE ORDERSTATUS BY ID
+PUT http://localhost:8080/api/v1/orderStatus/9 HTTP/1.1
+Content-Type: application/json
+
+{
+    "order_id": 1,
+    "status_catalog_id": 1
+}
+
+### DELETE ORDERSTATUS BY ID
+DELETE http://localhost:8080/api/v1/orderStatus/9
+
+        #------------------------------------- comments  ------------------------------------------------
+
+### GET ALL COMMENTS
+GET http://localhost:8080/api/v1/comments
+
+### GET COMMENT BY ID
+GET http://localhost:8080/api/v1/comments/5
+
+### CREATE COMMENT
+POST http://localhost:8080/api/v1/comments HTTP/1.1
+Content-Type: application/json
+
+{
+    "order_id": 1,
+    "user_id": 1,
+    "comment_text": "I enjoyed the food kemboi",
+    "is_complaint": false,
+    "is_praise": true
+}
+
+### UPDATE COMMENT BY ID
+PUT http://localhost:8080/api/v1/comments/5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "order_id": 1,
+    "user_id": 1,
+    "comment_text": "I enjoyed the food",
+    "is_complaint": false,
+    "is_praise": true
+}
+
+### DELETE COMMENT BY ID
+DELETE http://localhost:8080/api/v1/comments/5
+
+        #------------------------------------- ------------------------------------------------
